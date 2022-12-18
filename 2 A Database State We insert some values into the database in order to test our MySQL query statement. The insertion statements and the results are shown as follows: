@@ -1,0 +1,342 @@
+###Country:
+INSERT INTO `mydb`.`COUNTRY`(`Country_name`) VALUES ('The United States');
+ INSERT INTO `mydb`.`COUNTRY`(`Country_name`) VALUES ('France');
+INSERT INTO `mydb`.`COUNTRY`(`Country_name`) VALUES ('Germany');
+INSERT INTO `mydb`.`COUNTRY`(`Country_name`) VALUES ('Japan');
+INSERT INTO `mydb`.`COUNTRY`(`Country_name`) VALUES ('Vietnam');
+
+State:
+INSERT INTO `mydb`.`STATE`(`State_name’, ‘Country_name`) VALUES (‘NY’, ‘The United States’);
+INSERT INTO `mydb`.`STATE`(`State_name’, ‘Country_name`) VALUES (‘TX’, ‘The United States’);
+City:
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Berlin’,‘NULL’, ‘Germany’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Buffalo’, ‘NY’, ‘The United States’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Chuo’, ‘NULL’,’Japan’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Da Nang, ‘NULL’,’Vietnam’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Dallas’,’TX’,‘The United States’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Lyon’,‘NULL’, ‘France’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Metz’,‘NULL’, ‘France’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘New York’,’NY’,‘The United States’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Nice’,‘NULL’, ‘France’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Paris’,‘NULL’, ‘France’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Rochester’,‘NULL’, ‘France’)
+INSERT INTO `mydb`.`CITY` (‘City_name’, ‘State_name’, ‘Country_name’,) VALUES (‘Strasbourg’,‘NULL’, ‘France’)
+
+Travel attraction : 
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES (‘The Dallas Zoo', 'The United States', 'TX', 'Dallas');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Times Square', 'The United States', 'NY', 'New York');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES (  'Canalside', 'The United States', 'NY', 'Buffalo');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Susan B. Anthony Museum & House', 'The United States', 'NY', 'Rochester');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Ba Na Hills', 'Vietnam', 'Da Nang');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES (  'Eiffle Tower', 'France', 'Paris');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Berlin Zoological Garden', 'Germany', 'Berlin');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Ginza', 'Japan', 'Chuo');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Vieux Lyon', 'France', 'Lyon');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Musée de la Cour d\'Or', 'France', 'Metz');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Cathedrale Notre Dame de Strasbourg', 'France', 'Strasbourg');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Central Park', 'The United States', 'NY', 'New York');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'China Town', 'The United States', 'NY', 'New York');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Place du Tertre', 'France', 'Paris');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Bourdelle museum', 'France', 'Paris');
+INSERT INTO `mydb`.`Travel_Attraction` (`Travel_attraction_name`, `Country_name`, `State_name`, `City_name`) VALUES ( 'Castle Hill', 'France', 'Nice');
+
+Restaurant:
+INSERT INTO `mydb`.`RESTAURANT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘The United States’, ‘NY’, ’Rochester’, ‘Times Square, ‘30’, ‘https://www.ichiranusa.com’, ‘Ichiran Ramen’);
+INSERT INTO `mydb`.`RESTAURANT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘The United States’,’New York’, ‘NY’, ‘The Dallas Zoo’, ‘10’, ‘https://www.rosaboba.com’, ‘Rosa Boba’);
+INSERT INTO `mydb`.`RESTAURANT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘Vietnam’, ’Da Nang’, ‘Ba Na Hills’, ‘6’, ‘https://anthitcho.com’, ‘Sky Pho Cow’); 
+INSERT INTO `mydb`.`RESTAURANT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘The United States’, ‘NY’, ’New York’, ‘Central Park’, ‘8’, ‘https://strawberrylord.com’, ‘Sifu of Strawberry’);
+INSERT INTO `mydb`.`RESTAURANT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘The United States’, ‘NY’, ‘Buffalo’, ‘China Town’, ‘15’, ’https://www.tigerpiggyrice.com’, ‘Tiger Piggy Rice’);
+INSERT INTO `mydb`.`RESTAURANT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘Paris’, ‘France’, ‘Place du Tertre’, ‘35’,‘http://www.keshavmakhani.com’, ‘Keshav Makhani’);
+INSERT INTO `mydb`.`RESTAURANT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘Germany’, ’Berlin’, ‘Berlin Zoological Garden’, ‘22’, ‘http://www.varsithsamosa.com’, ‘Varshith Samosa’);
+INSERT INTO `mydb`.`RESTAURANT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘Japan’, ’Chuo’, ‘Ginza’, ‘28’, ‘https://www.sushi-jiro.jp/dining-at-jiro/’, ‘Sukiyabashi Jiro’);
+INSERT INTO `mydb`.`RESTAURANT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘France’, ‘Paris’, ‘Eiffel Tower, ‘38’, ‘https://www.desgateauxetdupain.com/’, ‘Des gâteaux et du pain’);
+INSERT INTO`mydb`.`RESTAURANT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘France’, ’Lyon’, ‘Vieux Lyon’, ‘23’, ‘NA’, ‘Cosy Corner’);
+INSERT INTO `mydb`.`RESTAURANT’(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘France’, ’Metz’, ‘Musée de la Cour d'Or’, ‘25’, ‘https://www.auculdpoule.fr/’, ‘Au Cul d'Poule’);
+INSERT INTO `mydb`.`RESTAURANT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘France’, ’Strasbourg’, ‘Cathedrale Notre Dame de Strasbourg’, ‘17’, ‘https://www.le-balsamo-strasbourg.fr/’, ‘Balsamo’);
+INSERT INTO `mydb`.``RESTAURANT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Cpc’, ‘Web_link’, ‘Restauant_name’) VALUES 
+(‘France’, ’Nice’, ‘Bay Tower’,‘20’, ‘https://www.bonjour'd.fr/’, ‘Bonjour'd’);
+
+
+Sight
+INSERT INTO `mydb`.`SIGHT`  (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘The United States’, ‘NY’, ’Rochester’, ‘Times Square, ‘350’, ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘The United States’,’New York’, ‘NY’, ‘The Dallas Zoo’, ‘10’, ‘https://www.rosaboba.com’, ‘Rosa Boba’);
+INSERT INTO`mydb`.`SIGHT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘Vietnam’, ’Da Nang’, ‘Ba Na Hills’, ‘2000’,  ‘https://www.flyteam-tripshare.com’); 
+INSERT INTO `mydb`.`SIGHT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘The United States’, ‘NY’, ’New York’, ‘Central Park’, ‘280’,  ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘The United States’, ‘NY’, ‘Buffalo’, ‘China Town’, ‘199’,  ‘https://www.flyteam-tripshare.com’;
+INSERT INTO `mydb`.`SIGHT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘Paris’, ‘France’, ‘Place du Tertre’, ‘1520’,‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘Germany’, ’Berlin’, ‘Berlin Zoological Garden’, ‘2222’,  ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘Japan’, ’Chuo’, ‘Ginza’, ‘2820’, ‘ ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES  
+(‘France’, ‘Paris’, ‘Eiffel Tower, ‘1818’, ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘France’, ’Lyon’, ‘Vieux Lyon’, ‘2319’,  ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘France’, ’Metz’, ‘Musée de la Cour d'Or’, ‘2511’,  ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT`(‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘France’, ’Strasbourg’, ‘Cathedrale Notre Dame de Strasbourg’, ‘1700’,  ‘https://www.flyteam-tripshare.com’);
+INSERT INTO `mydb`.`SIGHT` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’, ‘Ticket_price’, ‘Web_link’) VALUES 
+(‘France’, ’Nice’, ‘Bay Tower’,‘1900’,  ‘https://www.flyteam-tripshare.com’);
+
+Shopping mall:
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES 
+(‘The United States’, ‘NY’, ’Rochester’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES 
+(‘The United States’,’New York’, ‘NY’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES 
+(‘Vietnam’, ’Da Nang’, ‘Ba Na Hills’); 
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES  
+(‘The United States’, ‘NY’, ’New York’, ‘Central Park’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES  
+(‘The United States’, ‘NY’, ‘Buffalo’, ‘China Town’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES   
+(‘Paris’, ‘France’, ‘Place du Tertre’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES   
+(‘Germany’, ’Berlin’, ‘Berlin Zoological Garden’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES  
+(‘Japan’, ’Chuo’, ‘Ginza’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES   
+(‘France’, ‘Paris’, ‘Eiffel Tower’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES  
+(‘France’, ’Lyon’, ‘Vieux Lyon’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES  
+(‘France’, ’Metz’, ‘Musée de la Cour d'Or’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES  
+(‘France’, ’Strasbourg’, ‘Cathedrale Notre Dame de Strasbourg’);
+INSERT INTO `mydb`.`Shopping_Mall` (‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES  
+(‘France’, ’Nice’, ‘Bay Tower’)
+
+Destination:
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('The United States', 'TX', 'Dallas', 'The Dallas Zoo', '8:00 ', '8:00', 'Walk', '1763', '18001090');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('The United States', 'NY', 'New York', 'Times Square', 'Walk', '199999', '18001091');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('The United States', 'NY', 'Buffalo', 'Canalside', '9:00 ', '5:00', 'Walk', '368', '18001092');
+INSERT INTO `mydb`.`DESTINATION`(`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('The United States', 'NY', 'Rochester', 'Susan B. Anthony Museum & House', '10:00 ', '5:00', 'Walk', '167', '18001093');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES  ('Vietnam','NULL', 'Da Nang', 'Ba Na Hills', '9:30 ', '6:30', 'Moped', '9889', '18001094');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('France','Vietnam', 'Paris', 'Eiffle Tower', 'Walk', '198945', '18001095');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('Germany','NULL','Berlin', 'Berlin Zoological Garden', '8:00 ', '7:30', 'Train', '1211', '18001096');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('Japan','NULL', 'Chuo', 'Ginza', 'Moped', '200256', '18001097');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('France','NULL', 'Lyon', 'Vieux Lyon', 'Train', '143', '18001098');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('France','NULL', 'Metz', 'Musée de la Cour d\'Or', '10:30 ', '4:30', 'Walk', '456', '18001099');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('France','NULL', 'Strasbourg', 'Cathedrale Notre Dame de Strasbourg', '10:30 ', '7:00', 'Train', '689', '18001100');
+INSERT INTO `mydb`.`destination` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('The United States', 'NY', 'New York', 'Central Park', 'Taxi', '5115', '18001200');
+INSERT INTO `mydb`.`destination` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('The United States', 'NY', 'New York', 'China Town', 'Taxi', '150897', '18001300');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('France','NULL', 'Paris', 'Place du Tertre', '11:00 ', '3:30', 'Train', '211', '18001400');
+INSERT INTO `mydb`.`DESTINATION` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Opening_hours`, `Closing_hours`, `Way_of_travel`, `Rating`, `Phone_no`) VALUES ('France','NULL', 'Paris', 'Bourdelle museum', '9:00 ', '6:00', 'Train', '868', '18001500');
+
+Authorized Member:
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`,’Country’) VALUES ('12312', 'yxc@gmail.com', 'yxc', 'apple', '1', '1 Apple Pie St, Dallas, TX, The United States, 78123', 'New York ', 'Japan', '53', '21', 'preferred',’The United States);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`,’Country’) VALUES ('12562', 'txd@gmail.com', 'txd', 'banana', '2', '99 Martin-Luther-Str., Berlin, Germany 10777 ', 'France', 'New York ', '25', '35', 'preferred',’Germany’);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`, ’Country’) VALUES ('13582', 'yxh@gmail.com', 'yxh', 'strawberry', '3', 'Oude Waal 11, 1011 BZ Amsterdam, Netherlands', 'Germany', 'France ', '55', '42', 'regular',’Netherlands’);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`, ’Country’) VALUES ('13896', 'yxh@gmail.com', 'saivarshith', 'lemon', '4', '122D CMT8, District 3, Ho Chi Minh city', 'Japan', 'France', '42', '11', 'regular',’Vietnam’);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`, ’Country’) VALUES ('14582', 'keshavkumar@gmail.com', 'keshavkumar', 'kiwi', '5', '26 Temple Pl, Boston, MA, The United States 02108', 'Dallas', 'France', '153', '120', 'regular',’The United States’);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`,’Country’) VALUES ('14623', 'komirisetty@gmail.com', 'komiri', 'orange', '6', '10 Bayfront Ave, Singapore 018956', 'France', 'New York ', '251', '124',’Singapore’);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`, ’Country’) VALUES ('15894', 'rajbux@gmail.com', 'raj', 'grape', '7', '10 Bayfront Ave, Singapore 018956', 'France', 'Germany', '12', '5', 'regular',’Singapore’);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`, ’Country’) VALUES ('15974', 'yuju@gmail.com', 'yujuu', 'peach', '8', '10 Bayfront Ave, Singapore 018956', 'Germany', 'France', '586', '556', 'regular',’Singapore’);
+INSERT INTO `mydb`.`Authorized_Member` (`Authorized_member_ID`, `Email`, `User_name`, `Password`, `Ranking`, `Address`, `Visit_destination`, `Wished_destination`, `Number_of_followers`, `Number_of_people_to_follow`, `Status`, ’Country’) VALUES ('16745', 'tiger123@gmail.com', 'tigeer', 'mango', '9', '04-0061 , Chuo City, Ginza,Tokyo', 'New York ', 'France', '1526', '1254', 'regular',’Japan’);
+
+Regular member
+INSERT INTO `mydb`.`Regular_Member` (`Regular_member_ID`) VALUES (‘13582’);
+INSERT INTO `mydb`.`Regular_Member` (`regular_member_ID`) VALUES (‘13896’);
+INSERT INTO `mydb`.`Regular_Member` (`regular_member_ID`) VALUES (‘14582’);
+INSERT INTO `mydb`.`Regular_Member` (`regular_member_ID`) VALUES (‘15894’);
+INSERT INTO `mydb`.`Regular_Member` (`regular_member_ID`) VALUES (‘15974’);
+INSERT INTO `mydb`.`Regular_Member` (`regular_member_ID`) VALUES (‘16745’);
+
+Preferred member:
+INSERT INTO `mydb`.`Preferred _member` (`Preferred_member_ID`) VALUES (‘12312’);
+INSERT INTO `mydb`.`Preferred _member` (`Preferred_member_ID`) VALUES (‘12562’);
+INSERT INTO `mydb`.`Preferred _member` (`Preferred_member_ID`) VALUES(‘14623’);
+
+Trip plan : 
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('121212', 'yxc', 'Travel', '10000', 'July 20th, 2018', 'July 29th, 2018', '10 days', 'New York ');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('212121', 'txd', 'Business', '1350', 'April 1st, 2022', 'April 7th, 2022', '7 days', 'France');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('696969', 'yxh', 'Business', '1200', 'October 15th, 2017', 'October 19th, 2017', '5 days', 'Germany');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('969696', 'saivarshith', 'Travel', '17750', 'March 2nd, 2019', 'March 16th, 2019', '15 days', 'Japan');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('484848', 'keshavkumar', 'Travel', '5980', 'December 12th, 2020', 'December 16th, 2020', '5 days', 'Dallas');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('989898', 'komiri', 'Business', '3975', 'May 19th, 2021', 'May 22th, 2021', '4 days', 'France');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('123321', 'raj', 'Travel', '20995', 'August 10th, 2018', 'August 16th, 2018', '7 days', 'France');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('678876', 'yujuu', 'Travel', '15000', 'January 1th, 2019', 'January 10th, 2019', '10 days', 'Germany');
+INSERT INTO `mydb`.`Trip_Plan` (`Trip_plan_ID`, `Name`, `Purpose`, `Potential_cost`, `Start_time`, `End_time`, `Duration`, `Visit_destination`) VALUES ('123456', 'tigeer', 'Travel', '23000', 'August 18th, 2020', 'August 28th, 2020', '11 days', 'New York ');
+
+
+Image : 
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('111', 'www.html.am/images/freedomwomen.jpg', '12312');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('222', 'www.html.am/images/bobaeveryday.jpg', '12562');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('333', 'www.html.am/images/ineedmoney.jpg', '13582');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('444', 'www.html.am/images/studyabuse.jpg', '13896');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('555', 'www.html.am/images/gimmeajobalready.jpg', '14582');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('666', 'www.html.am/images/whybro.jpg', '14623');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('777', 'www.html.am/images/ihatethis.jpg', '14623');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('888', 'www.html.am/images/iwannasleep.jpg', '15974');
+INSERT INTO `mydb`.`Image` (`ID`, `Link`, `Authorized Member_ID`) VALUES ('999', 'www.html.am/images/pretty.jpg', '16745');
+
+
+Business Owner:
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1998', 'Ichiran Ramen', 'Restaurant', '903126504', 'Hua Ca');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1997', 'Rosa Boba', 'Restaurant', '903719397', 'Rosa');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1996', 'Sky Pho Cow', 'Cafe', '456789123', 'Skylar');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1995', 'Sifu of Strawberry', 'Restaurant', '123456789', 'Bing Chiling');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1994', 'Tiger Piggy Rice', 'Restaurant', '903126504', 'Hua Ca');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1993', 'Keshav Makhani', 'Cafe', '345678912', 'Rue');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1992', 'Varshith Samosa', 'Restaurant', '832567478', 'Lexi');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1991', 'Sukiyabashi Jiro', 'Restaurant', '123456789', 'Bing Chiling');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1990', 'Des gâteaux et du pain', 'Restaurant', '316345678', 'Hailey');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1989', 'Cosy Corner', 'Cafe', '218473567', 'Leila');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1987', 'Au Cul d\'Poule', 'Cafe', '218473567', 'Leila');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1986', 'Balsamo', 'Cafe', '218473567', 'Leila');
+INSERT INTO `mydb`.`Business_Owner` (`Business_ID`, `Business_name`, `Business_type`, `Phone_no`, `Contact_person`) VALUES ('1985', 'Bonjour\'d', 'Restaurant', '316345678', 'Hailey');
+
+Comments:
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘123’, 'The United States', 'NY’, ‘New York', Times Square', '7:00', '2018-08-10', '23', 'NYC is a magical city. I love traveling with Fly Team Co', '12312');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘345’,'France’,’NULL’  'Paris', 'Eiffle Tower','4:00', '2022-04-10', '45', 'We love Fly Team Co', '12562');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘567’, 'Germany',’NULL’, ‘Berlin’, 'Berlin Zoological Garden’, '10:00', '2017-10-26', '111', 'Quick, easy, nice stay!', '13582');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES ('891', ’Japan',’NULL’,’Chuo’, ‘Ginza’ '12:00', '2019-01-19', '256', 'I highly recommend Fly Team Co based on my personal experience', '13896');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘321’,’The United States', ‘TX’, ‘Dallas',’The Dallas Zoo', '9:00', '2020-12-21', '3', 'I and my friends had a great time in Japan and learnt a lot along the way thanks to our tour guide Keshaaav. Would highly recommend Fly Team Co. Thanks a lot', '14582');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘543’, ’France’, 'Paris', ‘Place du Tertrer', '8:30', '2021-05-26', '11', 'Last minute trip was booked. Fly Team Co was very professional and fast', '14623');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘198’,’France’,’NULL’, 'Paris', 'Bourdelle Museum’,'5:17', '2018-12-12', '268', ' We booked our trip through Fly Team Co and they did not disappoint us', '15894');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘765’,’Germany',’NULL’, ‘Berlin’, 'Berlin Zoological Garden’, '3:28', '2020-05-20', '1100', 'My trip would not be complete without Fly Team Co. ', '15794');
+INSERT INTO `mydb`.`Comment` (‘Comment_ID’, `Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `posting_time`, `Date`, `Rating`, `Content`, `Authorized Member_ID`) VALUES (‘675’, ’The United States', 'NY’, ‘New York','Central Park', '11:00', '2022-06-01', '115', 'I love New York. Thanks Fly Team Co for such an amazing trip', '16745');
+
+Follow:
+INSERT INTO `mydb`.`Follow` (`Member_ID1`, `Member_ID2`) VALUES ('12312', '12562');
+INSERT INTO `mydb`.`Follow` (`Member_ID1`, `Member_ID2`) VALUES ('13582','12312');
+INSERT INTO `mydb`.`Follow` (`Member_ID1`, `Member_ID2`) VALUES ('14582’, '13582');
+INSERT INTO `mydb`.`Follow` (`Member_ID1`, `Member_ID2`) VALUES ('14623', '14582');
+INSERT INTO `mydb`.`Follow` (`Member_ID1`, `Member_ID2`) VALUES ('15894', ‘13582’);
+INSERT INTO `mydb`.`Follow` (`Member_ID1`, `Member_ID2`) VALUES ('15974','12312');
+INSERT INTO `mydb`.`Follow` (`Member_ID1`, `Member_ID2`) VALUES ('14582’,'15974');
+
+
+Rating:
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('23', '12312', '121212');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('45', '12586', '212121');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('111', '13582', '696969');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('256', '13896', '969696');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('3', '14582', '484848');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('11', '14623', '989898');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('268', '15894', '123321');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('1100', '15974', '678876');
+INSERT INTO `mydb`.`Rating` (`Rating`, `Authorized_member_ID`, `Trip plan_ID`) VALUES ('115', '16745', '123456');
+
+Way of travel : 
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES ('The United States', 'TX', 'Dallas', 'The Dallas Zoo', 'Walk');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES ('The United States', 'NY', 'New York', 'Times Square', 'Walk');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('The United States', 'NY', 'Buffalo', 'Canalside', 'Walk');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES ('The United States', 'NY', 'Rochester', 'Susan B. Anthony Museum & House', 'Walk');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('Vietnam', 'Da Nang', 'Ba Na Hills', 'Walk');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('France', 'Paris', 'Eiffle Tower', 'Walk');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('Germany', 'Berlin', 'Berlin Zoological Garden', 'Train');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('Japan', 'Chuo', 'Ginza', 'Moped');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('France', 'Lyon', 'Vieux Lyon', 'Train');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('France', 'Metz', 'Musée de la Cour d\'Or', 'Walk');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('France', 'Strasbourg', 'Cathedrale Notre Dame de Strasbourg', 'Train');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('The United States', 'NY', 'New York', 'Central Park', 'Taxi');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('The United States', 'NY', 'New York', 'China Town', 'Taxi');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('France', 'Paris', 'Place du Tertre', 'Train');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('France', 'Paris', 'Bourdelle museum', 'Train');
+INSERT INTO `mydb`.`Way of travel` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Way_of_travel`) VALUES  ('France', 'Nice', 'Bay Tower', 'Walk');
+
+Contain:
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('The United States', 'TX', 'Dallas', 'The Dallas Zoo', '1:00', ‘5:00’, ‘484848’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('The United States', 'NY', 'New York', 'Times Square', '3:10', ‘5:00’, ‘121212’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('France', 'Paris', 'Eiffle Tower', '2:00', ‘7:00’, ‘212121’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('Germany', 'Berlin', 'Berlin Zoological Garden', '6:25', ‘8:50’, ‘696969’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('Japan', 'Chuo', 'Ginza', '11:00', ‘1:00’, ‘969696’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('The United States', 'NY', 'New York', 'Central Park', '10:00', ‘4:00’, ‘123456’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES('France', 'Paris', 'Place du Tertre','6:00', ‘9:00’, ‘989898’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('France', 'Paris', 'Bourdelle museum', '7:00', ‘9:00’, ‘123321’);
+INSERT INTO `mydb`.`Contain` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Arrival_time’, ‘Departure_time’, ‘Trip_plan_ID`) VALUES ('Germany', 'Berlin', 'Berlin Zoological Garden', '1:25', ‘4:50’, ‘123456’);
+
+Opinion:
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘like’, ‘123’, ‘12312’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘null’, ‘345’, ‘12562’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘like’, ‘567’, ‘13582’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘like’, ‘891’, ‘13896’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘null’, ‘321’, ‘14582’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘null’, ‘543’, ‘14623’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘null’, ‘198’, ‘15894’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘like’, ‘765’, ‘15974’);
+INSERT INTO `mydb`.`Opinion`(‘boolean’, ‘Comment_ID’, `Authorized_member_ID`) VALUES (‘like’, ‘675’, ‘16745’);
+
+Business Associated:
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('The United States', 'TX', 'Dallas', 'The Dallas Zoo', ’1997’ );
+INSERT INTO `mydb`.`Busines_ Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('The United States', 'NY', 'New York', 'Times Square', '1995');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('The United States', 'NY', 'Buffalo', 'Canalside', '1994');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES('The United States', 'NY', 'Rochester', 'Susan B. Anthony Museum & House', '1998');
+INSERT INTO `mydb`.`Business Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('Vietnam', 'Da Nang', 'Ba Na Hills', '1996');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('France', 'Paris', 'Eiffle Tower', '1990');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('Germany', 'Berlin', 'Berlin Zoological Garden', '1992');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES  ('Japan', 'Chuo', 'Ginza', '1991');
+INSERT INTO `mydb`.`Business_ Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('France', 'Lyon', 'Vieux Lyon', '1989');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('France', 'Metz', 'Musée de la Cour d\'Or', 'Walk');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('France', 'Strasbourg', 'Cathedrale Notre Dame de Strasbourg', 'Train');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('The United States', 'NY', 'New York', 'Central Park', 'Taxi');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('The United States', 'NY', 'New York', 'China Town', 'Taxi');
+INSERT INTO `mydb`.`Busines_ Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('France', 'Paris', 'Place du Tertre', 'Train');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('France', 'Paris', 'Bourdelle museum', 'Train');
+INSERT INTO `mydb`.`Business_Associated` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Business_ID`) VALUES ('France', 'Nice', 'Bay Tower', 'Walk');
+Wish to go:
+INSERT INTO `mydb`.`Wish_ to_ go` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('Japan', 'Tokyo', 'Fuji Moutain', ‘12312’ );
+INSERT INTO `mydb`.`Wish_ to_ go` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('The United States', 'NY', 'New York', ‘China Town’, ‘12562’ );
+INSERT INTO `mydb`.`Wish_ to_ go` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES (‘France’, 'Nice’, 'Bay Tower’,’13582’ );
+INSERT INTO `mydb`.`Wish_ to_ go`` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('France’,  'Paris', 'Eiffle Tower',’13896’ );
+INSERT INTO `mydb`, `Wish_ to_ go` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('France', 'Lyon', 'Vieux Lyon',’14582’ );
+INSERT INTO `mydb`.`Wish_ to_ go`(`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('The United States', 'NY’, ‘New York', 'Central’ Park',’14623’ );
+INSERT INTO `mydb`.`Wish_ to_ go` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('Germany', ‘Berlin’, 'Berlin Zoological Garden',’15894’ );
+INSERT INTO `mydb`.`Wish_ to_ go` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('France’, ‘Metz’, 'Musee de la Cour d’Or', ‘15974’ );
+INSERT INTO `mydb`Wish_ to_ go` (`Country_name`, `State_name`, `City_name`, `Travel_attraction_name`, `Authorized_member_ID`) VALUES ('France', 'Strasbourg', 'Cathedrale Notre Dame de Strasbourg',’16745’ );
+
+Associated:
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES ('12312’,’121212');
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES ('12562’,’212121');
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES ('13582’,’696969);
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES (‘13896’,'969696');
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES ('14582’,’484848');
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES (‘14623’,’989898');
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES ('15894’,’123321’);
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES (‘15974’,'678876');
+INSERT INTO `mydb`.`Associated` (`Authorized_member_ID`, `Trip_plan_ID`) VALUES ('16745’,’123456');
+
+Description:
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES('NYC is a magical city. I love traveling with Fly Team Co',
+'The United States', 'NY’, ‘New York', Times Square')
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+(‘ 'We love Fly Team Co','France’,’NULL’  'Paris', 'Eiffle Tower')
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+(‘Quick, easy, nice stay!,'Germany',’NULL’, ‘Berlin’, 'Berlin Zoological Garden’)
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+('I highly recommend Fly Team Co based on my personal experience',’Japan',’NULL’,’Chuo’, ‘Ginza’)
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+ 'I and my friends had a great time in Dallas and learnt a lot along the way thanks to our tour guide Keshaaav. Would highly recommend Fly Team Co. Thanks a lot’,’The United States', ‘TX’, ‘Dallas',’The Dallas Zoo')
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+('Last minute trip was booked. Fly Team Co was very professional and fast’,’France’,  'Paris', ‘Place du Tertre')
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+('Paris is my dream. We would come back another time soon. We booked our trip through Fly Team Co and they did not disappoint us’,’France’,’NULL’, 'Paris', 'Bourdelle Museum’)
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+(‘My trip wouldn't be complete without Fly Team Co. Our first time in Germany was so awesome’,’Germany',’NULL’, ‘Berlin’, 'Berlin Zoological Garden’)
+INSERT INTO `mydb`.`DESCRIPTION’(`Content’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES
+('I love New York. Thanks Fly Team Co for such an amazing trip’,’The United States', 'NY’, ‘New York', ‘Central Park')
+
+Edit: 
+INSERT INTO `mydb`.`EDIT` (`Preferred_member_ID`,‘Date’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES (‘12312’,’07-15-2018’, ‘The United States’, ‘NY’, ‘New York’, ‘Times Square’);
+INSERT INTO `mydb`.`EDIT` (`Preferred_member_ID`,‘Date’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES(‘12562,’03-20-2018’ ‘France’, ‘Paris’, ‘Eiffle Tower’);
+INSERT INTO `mydb`.`EDIT` (`Preferred_member_ID`,‘Date’, ‘Country_name’, ‘State_name’, ‘City_name’, ‘Travel_attraction_name’) VALUES (‘14623’,’04-1-2021’, ‘France’, ‘Paris‘, ‘Place duTerte’);
