@@ -1,0 +1,477 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`business_owner`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`business_owner` (
+  `Business_ID` INT NOT NULL,
+  `Business_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Business_type` VARCHAR(45) NULL DEFAULT NULL,
+  `Phone_no` INT NULL DEFAULT NULL,
+  `Contact_person` VARCHAR(45) NULL DEFAULT NULL,
+  `net_value` INT NULL DEFAULT NULL,
+  `net_assets` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`Business_ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`restaurant`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`restaurant` (
+  `Country_name` VARCHAR(45) NOT NULL,
+  `State_name` VARCHAR(45) NULL DEFAULT NULL,
+  `City_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Travel_attraction_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Cpc` VARCHAR(45) NULL DEFAULT NULL,
+  `Web_link` VARCHAR(45) NULL DEFAULT NULL,
+  `CITY_City_name` VARCHAR(45) NOT NULL,
+  `CITY_STATE_State_Name` VARCHAR(45) NOT NULL,
+  `CITY_STATE_COUNTRY_Country_name` VARCHAR(45) NOT NULL,
+  `restaurant_ID` VARCHAR(45) NOT NULL,
+  `rating` INT NULL DEFAULT NULL,
+  `restaurant_name` VARCHAR(45) NULL DEFAULT NULL,
+  `restaurant_address` VARCHAR(45) NOT NULL,
+  `estimated_price` INT NOT NULL,
+  PRIMARY KEY (`Country_name`, `CITY_City_name`, `CITY_STATE_State_Name`, `CITY_STATE_COUNTRY_Country_name`, `restaurant_ID`),
+  INDEX `fk_RESTAURANT_CITY1_idx` (`CITY_City_name` ASC, `CITY_STATE_State_Name` ASC, `CITY_STATE_COUNTRY_Country_name` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`associated`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`associated` (
+  `Business Owner_Business_ID` INT NOT NULL,
+  `RESTAURANT_Country_name` VARCHAR(45) NOT NULL,
+  `RESTAURANT_CITY_City_name` VARCHAR(45) NOT NULL,
+  `RESTAURANT_CITY_STATE_State_Name` VARCHAR(45) NOT NULL,
+  `RESTAURANT_CITY_STATE_COUNTRY_Country_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Business Owner_Business_ID`, `RESTAURANT_Country_name`, `RESTAURANT_CITY_City_name`, `RESTAURANT_CITY_STATE_State_Name`, `RESTAURANT_CITY_STATE_COUNTRY_Country_name`),
+  INDEX `fk_Business Owner_has_RESTAURANT_RESTAURANT1_idx` (`RESTAURANT_Country_name` ASC, `RESTAURANT_CITY_City_name` ASC, `RESTAURANT_CITY_STATE_State_Name` ASC, `RESTAURANT_CITY_STATE_COUNTRY_Country_name` ASC) VISIBLE,
+  INDEX `fk_Business Owner_has_RESTAURANT_Business Owner1_idx` (`Business Owner_Business_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Business Owner_has_RESTAURANT_Business Owner1`
+    FOREIGN KEY (`Business Owner_Business_ID`)
+    REFERENCES `mydb`.`business_owner` (`Business_ID`),
+  CONSTRAINT `fk_Business Owner_has_RESTAURANT_RESTAURANT1`
+    FOREIGN KEY (`RESTAURANT_Country_name` , `RESTAURANT_CITY_City_name` , `RESTAURANT_CITY_STATE_State_Name` , `RESTAURANT_CITY_STATE_COUNTRY_Country_name`)
+    REFERENCES `mydb`.`restaurant` (`Country_name` , `CITY_City_name` , `CITY_STATE_State_Name` , `CITY_STATE_COUNTRY_Country_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`authorized_member`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`authorized_member` (
+  `ID` INT NOT NULL,
+  `Email` VARCHAR(45) NULL DEFAULT NULL,
+  `User_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Password` VARCHAR(45) NULL DEFAULT NULL,
+  `Ranking` INT NULL DEFAULT NULL,
+  `Address` VARCHAR(45) NULL DEFAULT NULL,
+  `Number_of_followers` INT NULL DEFAULT NULL,
+  `Number_of_people_to_follow` INT NULL DEFAULT NULL,
+  `Status` VARCHAR(45) NOT NULL,
+  `Upload_count` INT NULL DEFAULT NULL,
+  `country_name` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NULL DEFAULT NULL,
+  `wished_destination` VARCHAR(45) NULL DEFAULT NULL,
+  `no_of_comments` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`city`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`city` (
+  `City_name` VARCHAR(45) NOT NULL,
+  `State_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Country_name` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`City_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`comment`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`comment` (
+  `Country_name` INT NOT NULL,
+  `State_name` VARCHAR(45) NULL DEFAULT NULL,
+  `City_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Travel_attraction` VARCHAR(45) NULL DEFAULT NULL,
+  `member_id` VARCHAR(45) NULL DEFAULT NULL,
+  `posting_time` TIME NULL DEFAULT NULL,
+  `Date` DATE NULL DEFAULT NULL,
+  `Rating` INT NULL DEFAULT NULL,
+  `Content` VARCHAR(45) NULL DEFAULT NULL,
+  `authorized_member_ID` INT NOT NULL,
+  PRIMARY KEY (`Country_name`),
+  INDEX `fk_Comment_Authorized Member1_idx` (`authorized_member_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Comment_Authorized Member1`
+    FOREIGN KEY (`authorized_member_ID`)
+    REFERENCES `mydb`.`authorized_member` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`travel attraction`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`travel attraction` (
+  `Country name` VARCHAR(45) NOT NULL,
+  `State_name` VARCHAR(45) NULL DEFAULT NULL,
+  `City_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Attraction_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Country name`, `Attraction_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`trip_plan`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`trip_plan` (
+  `ID` INT NOT NULL,
+  `Name` VARCHAR(45) NULL DEFAULT NULL,
+  `Purpose` VARCHAR(45) NULL DEFAULT NULL,
+  `Potential_cost` INT NULL DEFAULT NULL,
+  `start_date` DATE NULL DEFAULT NULL,
+  `end_date` DATE NULL DEFAULT NULL,
+  `authorized_member_ID` INT NOT NULL,
+  `Duration` TIME NULL DEFAULT NULL,
+  `Trip plan_ID` INT NOT NULL,
+  `country_name` VARCHAR(45) NOT NULL,
+  `actual_cost` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_Trip plan_Authorized Member1_idx` (`authorized_member_ID` ASC) VISIBLE,
+  INDEX `fk_Trip plan_Trip plan1_idx` (`Trip plan_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Trip plan_Authorized Member1`
+    FOREIGN KEY (`authorized_member_ID`)
+    REFERENCES `mydb`.`authorized_member` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`contain`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`contain` (
+  `Travel Attraction_Country name` VARCHAR(45) NOT NULL,
+  `Trip_plan_ID` INT NOT NULL,
+  `arrival_datetime` DATETIME NULL DEFAULT NULL,
+  `departure_datetime` DATETIME NULL DEFAULT NULL,
+  `authorized_member_ID` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`Travel Attraction_Country name`, `Trip_plan_ID`),
+  INDEX `fk_Travel Attraction_has_Trip plan_Trip plan1_idx` (`Trip_plan_ID` ASC) VISIBLE,
+  INDEX `fk_Travel Attraction_has_Trip plan_Travel Attraction1_idx` (`Travel Attraction_Country name` ASC) VISIBLE,
+  CONSTRAINT `fk_Travel Attraction_has_Trip plan_Travel Attraction1`
+    FOREIGN KEY (`Travel Attraction_Country name`)
+    REFERENCES `mydb`.`travel attraction` (`Country name`),
+  CONSTRAINT `fk_Travel Attraction_has_Trip plan_Trip plan1`
+    FOREIGN KEY (`Trip_plan_ID`)
+    REFERENCES `mydb`.`trip_plan` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`country`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`country` (
+  `Country_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Country_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`description`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`description` (
+  `Content` VARCHAR(45) NOT NULL,
+  `Descriptioncol` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`Content`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`destination`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`destination` (
+  `Country_name` VARCHAR(45) NOT NULL,
+  `State_name` VARCHAR(45) NULL DEFAULT NULL,
+  `City_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Travel_attraction_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Opening_hours` TIME NULL DEFAULT NULL,
+  `Way_of_travel` VARCHAR(45) NULL DEFAULT NULL,
+  `Rating` INT NULL DEFAULT NULL,
+  `Phone_no` INT NULL DEFAULT NULL,
+  `D_ID` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`Country_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`preferred member`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`preferred member` (
+  `ID` INT NOT NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`edit`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`edit` (
+  `Preferred Member_ID` INT NOT NULL,
+  `Description_Content` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Preferred Member_ID`, `Description_Content`),
+  INDEX `fk_Preferred Member_has_Description_Description1_idx` (`Description_Content` ASC) VISIBLE,
+  INDEX `fk_Preferred Member_has_Description_Preferred Member1_idx` (`Preferred Member_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Preferred Member_has_Description_Description1`
+    FOREIGN KEY (`Description_Content`)
+    REFERENCES `mydb`.`description` (`Content`),
+  CONSTRAINT `fk_Preferred Member_has_Description_Preferred Member1`
+    FOREIGN KEY (`Preferred Member_ID`)
+    REFERENCES `mydb`.`preferred member` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`follow`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`follow` (
+  `Authorized Member_ID` INT NOT NULL,
+  `Authorized Member_ID1` INT NOT NULL,
+  PRIMARY KEY (`Authorized Member_ID`, `Authorized Member_ID1`),
+  INDEX `fk_Authorized Member_has_Authorized Member_Authorized Membe_idx` (`Authorized Member_ID1` ASC) VISIBLE,
+  INDEX `fk_Authorized Member_has_Authorized Member_Authorized Membe_idx1` (`Authorized Member_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Authorized Member_has_Authorized Member_Authorized Member1`
+    FOREIGN KEY (`Authorized Member_ID`)
+    REFERENCES `mydb`.`authorized_member` (`ID`),
+  CONSTRAINT `fk_Authorized Member_has_Authorized Member_Authorized Member2`
+    FOREIGN KEY (`Authorized Member_ID1`)
+    REFERENCES `mydb`.`authorized_member` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`image`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`image` (
+  `ID` INT NOT NULL,
+  `member_ID` INT NULL DEFAULT NULL,
+  `Link` VARCHAR(45) NULL DEFAULT NULL,
+  `Authorized Member_ID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_Image_Authorized Member1_idx` (`Authorized Member_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Image_Authorized Member1`
+    FOREIGN KEY (`Authorized Member_ID`)
+    REFERENCES `mydb`.`authorized_member` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`member_associated_tripplan`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`member_associated_tripplan` (
+  `trip_plan_ID` INT NOT NULL,
+  `Authorized Member_ID` INT NOT NULL,
+  PRIMARY KEY (`trip_plan_ID`, `Authorized Member_ID`),
+  INDEX `fk_Trip plan_has_Authorized Member_Authorized Member1_idx` (`Authorized Member_ID` ASC) VISIBLE,
+  INDEX `fk_Trip plan_has_Authorized Member_Trip plan1_idx` (`trip_plan_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Trip plan_has_Authorized Member_Authorized Member1`
+    FOREIGN KEY (`Authorized Member_ID`)
+    REFERENCES `mydb`.`authorized_member` (`ID`),
+  CONSTRAINT `fk_Trip plan_has_Authorized Member_Trip plan1`
+    FOREIGN KEY (`trip_plan_ID`)
+    REFERENCES `mydb`.`trip_plan` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`rating`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`rating` (
+  `Rating` INT NOT NULL,
+  `Authorized_Member_ID` INT NOT NULL,
+  `Trip_Plan_OD` INT NOT NULL,
+  `Trip plan_ID` INT NOT NULL,
+  `Authorized Member_ID` INT NOT NULL,
+  PRIMARY KEY (`Rating`, `Authorized_Member_ID`, `Trip_Plan_OD`),
+  INDEX `fk_Rating_Trip plan1_idx` (`Trip plan_ID` ASC) VISIBLE,
+  INDEX `fk_Rating_Authorized Member1_idx` (`Authorized Member_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Rating_Authorized Member1`
+    FOREIGN KEY (`Authorized Member_ID`)
+    REFERENCES `mydb`.`authorized_member` (`ID`),
+  CONSTRAINT `fk_Rating_Trip plan1`
+    FOREIGN KEY (`Trip plan_ID`)
+    REFERENCES `mydb`.`trip_plan` (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`regular member`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`regular member` (
+  `ID` INT NOT NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`shopping_mall`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`shopping_mall` (
+  `Country_name` VARCHAR(45) NOT NULL,
+  `State_name` VARCHAR(45) NULL DEFAULT NULL,
+  `City_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Travel_attraction_name` VARCHAR(45) NULL DEFAULT NULL,
+  `CITY_City_name` VARCHAR(45) NOT NULL,
+  `CITY_STATE_State_Name` VARCHAR(45) NOT NULL,
+  `CITY_STATE_COUNTRY_Country_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Country_name`, `CITY_City_name`, `CITY_STATE_State_Name`, `CITY_STATE_COUNTRY_Country_name`),
+  INDEX `fk_SHOPPING_MALL_CITY1_idx` (`CITY_City_name` ASC, `CITY_STATE_State_Name` ASC, `CITY_STATE_COUNTRY_Country_name` ASC) VISIBLE,
+  CONSTRAINT `fk_SHOPPING_MALL_CITY1`
+    FOREIGN KEY (`CITY_City_name`)
+    REFERENCES `mydb`.`city` (`City_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`sight`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`sight` (
+  `Country_name` VARCHAR(45) NOT NULL,
+  `State_name` VARCHAR(45) NULL DEFAULT NULL,
+  `City_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Travel_attraction_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Ticket_price` VARCHAR(45) NULL DEFAULT NULL,
+  `Web_link` VARCHAR(45) NULL DEFAULT NULL,
+  `CITY_City_name` VARCHAR(45) NOT NULL,
+  `CITY_STATE_State_Name` VARCHAR(45) NOT NULL,
+  `CITY_STATE_COUNTRY_Country_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Country_name`, `CITY_City_name`, `CITY_STATE_State_Name`, `CITY_STATE_COUNTRY_Country_name`),
+  INDEX `fk_SIGHT_CITY1_idx` (`CITY_City_name` ASC, `CITY_STATE_State_Name` ASC, `CITY_STATE_COUNTRY_Country_name` ASC) VISIBLE,
+  CONSTRAINT `fk_SIGHT_CITY1`
+    FOREIGN KEY (`CITY_City_name`)
+    REFERENCES `mydb`.`city` (`City_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`state`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`state` (
+  `State_Name` VARCHAR(45) NOT NULL,
+  `Country_name` VARCHAR(45) NULL DEFAULT NULL,
+  `COUNTRY_Country_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`State_Name`, `COUNTRY_Country_name`),
+  INDEX `fk_STATE_COUNTRY_idx` (`COUNTRY_Country_name` ASC) VISIBLE,
+  CONSTRAINT `fk_STATE_COUNTRY`
+    FOREIGN KEY (`COUNTRY_Country_name`)
+    REFERENCES `mydb`.`country` (`Country_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`trip_cost`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`trip_cost` (
+  `Member_ID` INT NOT NULL,
+  `country_name` VARCHAR(45) NULL DEFAULT NULL,
+  `trip_id` INT NOT NULL,
+  `cost_whole` INT NULL DEFAULT NULL,
+  `cost_perday` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`trip_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`visited_destination`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`visited_destination` (
+  `vd_id` INT NOT NULL,
+  `destination_name` VARCHAR(45) NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
+  `member_id` INT NOT NULL,
+  `destination_id` INT NOT NULL,
+  PRIMARY KEY (`vd_id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`way of travel`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`way of travel` (
+  `Country_name` VARCHAR(45) NOT NULL,
+  `State_name` VARCHAR(45) NOT NULL,
+  `City_name` VARCHAR(45) NULL DEFAULT NULL,
+  `Travel_attraction_name` VARCHAR(45) NULL DEFAULT NULL,
+  `way of travel` VARCHAR(45) NULL DEFAULT NULL,
+  `COUNTRY_Country_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Country_name`),
+  INDEX `fk_Way of travel_COUNTRY1_idx` (`COUNTRY_Country_name` ASC) VISIBLE,
+  CONSTRAINT `fk_Way of travel_COUNTRY1`
+    FOREIGN KEY (`COUNTRY_Country_name`)
+    REFERENCES `mydb`.`country` (`Country_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`wish_to_go`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`wish_to_go` (
+  `Authorized Member_ID` INT NOT NULL,
+  `DESTINATION_Country_name` VARCHAR(45) NOT NULL,
+  `Rating` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`Authorized Member_ID`, `DESTINATION_Country_name`),
+  INDEX `fk_Authorized Member_has_DESTINATION_DESTINATION1_idx` (`DESTINATION_Country_name` ASC) VISIBLE,
+  INDEX `fk_Authorized Member_has_DESTINATION_Authorized Member1_idx` (`Authorized Member_ID` ASC) VISIBLE,
+  CONSTRAINT `fk_Authorized Member_has_DESTINATION_Authorized Member1`
+    FOREIGN KEY (`Authorized Member_ID`)
+    REFERENCES `mydb`.`authorized_member` (`ID`),
+  CONSTRAINT `fk_Authorized Member_has_DESTINATION_DESTINATION1`
+    FOREIGN KEY (`DESTINATION_Country_name`)
+    REFERENCES `mydb`.`destination` (`Country_name`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
