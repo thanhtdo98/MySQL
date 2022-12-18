@@ -1,0 +1,23 @@
+View 1. Retrieve all the restaurants in New York city, US.
+CREATE VIEW RESTAURANT_VIEW AS
+SELECT *
+FROM RESTAURANT
+WHERE City_name= 'New York'
+AND State_name= 'NY' 
+AND Country_name= 'The United States';
+SELECT * FROM RESTAURANT_VIEW; 
+ View 2. Retrieve countries and the members who have visited them. 
+CREATE VIEW VIEW_2 AS 
+Select d.country_name, a.User_name 
+From destination d 
+Join visited_destination v ON v.destination_id = d.D_ID
+Join authorized_member a on v.member_id = a.ID ;
+ View 3. Retrieve itineraries to France.
+CREATE VIEW VIEW_3 AS
+SELECT * from trip_plan
+WHERE country_name = "France";
+ View 4. Retrieve the country(s) visited by whom also visits/visited the US on the same trip (within 15 days).
+CREATE VIEW_4 AS
+SELECT country_name
+FROM trip_plan
+WHERE country_name = "US" and DATEDIFF(start_date, end_date) <= 15
