@@ -1,0 +1,80 @@
+Query 1. Retrieve the names, addresses, and estimated-prices of the 3 most popular restaurants in New York city, US. 
+Select r.restaurant_name, r.restaurant_address, r.estimated_price
+From restaurant r 
+Where country_name='The United States' and state_name='NY' and rating=5
+Limit 3;
+
+
+Query 2. Retrieve the username, status (regular or preferred), and ranking of the member who has uploaded the most pictures. 
+Select a.User_name, a.status, a.ranking
+From authorized_member a 
+Order By a.upload_count desc;
+
+
+
+Query 3. For each country in the system, retrieve the username, address and the number of followers of the members who live in this country and have the most followers.
+SELECT  Country, User_name, Address, Number_of_followers 
+FROM ( 
+  SELECT Country, User_name, Address, Number_of_followers,
+    ROW_NUMBER() OVER (PARTITION BY Country ORDER BY Number_of_followers DESC) as rn
+    FROM Authorized_Member) X
+where X.rn =1;
+
+
+
+ Query 4. Retrieve the names and countries of all preferred users who never visited the US. 
+select a.name, a.country_name
+from authorized_member a 
+inner join visited_destination d ON a.ID=d.member_id 
+Where a.status='preferred' and d.destination_name!= 'US' ;
+
+
+Query 5. For all country(s) visited by those who also visited the US on the same trip (within 15 days), retrieve the distinct names of the countries
+SELECT DISTINCT Visit_destination
+FROM Trip_plan
+WHERE Visit_destination != 'The United States'
+AND Visit_destination IN (SELECT Visit_destination FROM Authorized_member WHERE Visit_destination = 'The United States' AND ABS(DATEDIFF(Start_time, End_time)) <= 15)
+
+Query 6. Retrieve the contact information of the business owner who owns the most expensive restaurant and the owner who owns the most assets in the system. 
+Select b.phone_no, b.contact_person 
+
+Query 7. Retrieve the names of the 5 most desirable France cities to visit. 
+
+SELECT COUNT(Wished_destination) as wish_count, Wished_destination, Country_name
+FROM
+(
+SELECT a.Wished_destination, c.Country_name FROM authorized_member as a
+JOIN city as c
+ON a.Wished_destination = c.City_name
+WHERE Country_name = "France"
+) 
+GROUP BY Wished_destination
+ORDER BY wish_count DESC
+LIMIT 5
+);
+
+Query 8. Retrieve the username and status of the member who either posted any comments or created any itinerary between 12/01/2018 and 1/31/2019.
+SELECT User_name, Status
+FROM comment
+JOIN authorized_member
+ON comment.Authorized_Member_ID = authorized_member.Authorized_member_ID
+JOIN trip_plan
+On comment.Authorized_Member_ID = trip_plan.Authorized_member_ID 
+WHERE (comment.Date > "2018-12-01" AND comment.Date < "2019-01-31")
+OR
+(‘trip_plan.Start_time’ > "2018-12-01" AND ‘trip_plan.Start_time’ < "2019-01-31");
+
+ Query 9. For each member who has visited all the states/provinces in France, retrieve the maximum, minimum and average daily cost per person, per day across all these related itineraries (*considering restaurant and attraction cost only).
+Select MAX(t.cost_perday) as MAX_cost_perday, MIN(t.cost_perday) as MIN_cost_perday, 
+AVG(t.cost_perday) as AVG_cost_perday 
+FROM trip_cost t 
+Where t.country_name = 'France';
+
+ Query 10. For each country, retrieve the total number of original comments, the total number of related itineraries, and the total number of members from this country, and the total number of members who have visited. 
+Select count(con.authorized_member_ID) as comment_count, count(con.authorized_member_ID) as itenerary_count,
+count(a.ID) as member_count, count(t.authorized_member_ID) as visited_count
+From comment com
+Join contain con ON com.authorized_member_ID = con.authorized_member_ID
+join authorized_member a ON com.authorized_member_ID=a.ID
+join trip_plan t ON a.ID=t.authorized_member_ID
+Group by com.country_name;
