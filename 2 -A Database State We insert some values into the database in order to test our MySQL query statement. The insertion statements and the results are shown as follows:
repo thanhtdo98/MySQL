@@ -1,3 +1,4 @@
+<INSERT DATA>
 ###Country:
 INSERT INTO `mydb`.`COUNTRY`(`Country_name`) VALUES ('The United States');
  INSERT INTO `mydb`.`COUNTRY`(`Country_name`) VALUES ('France');
